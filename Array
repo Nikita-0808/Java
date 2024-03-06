@@ -1,1 +1,10 @@
+----------------------- Update array ------------------------
+public class Basics{
 
+    public class int friendsPairing(int n){
+        
+    }
+    public static void main(String[] args) {
+        System.out.println(friendsPairing(3));
+    }
+}
