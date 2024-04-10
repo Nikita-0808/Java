@@ -1,0 +1,247 @@
+problem 1 : print numbers from n to 1 (Decreasing order)
+
+public class RecursionBasics{
+    public static void printDec(int n){
+        // base case
+        if(n==1){
+            System.out.println(n);
+            return;
+        }
+
+        // recursion
+        System.out.print(n + " ");
+        printDec(n-1);
+    }
+    public static void main(String args[]){
+        int n=10;
+        printDec(n);
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 2 : print numbers from 1 to n (Increasing order)
+ 
+public class RecursionBasics{
+    public static void printInc(int n){
+        // base case
+        if(n==1){
+            System.out.print(n + " ");
+            return;
+        }
+
+        // recursion
+        printInc(n-1);
+        System.out.print(n + " ");
+    }
+    public static void main(String args[]){
+        int n=10;
+        printInc(n);
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 3 : print factorial of a number n
+ 
+public class RecursionBasics{
+    public static int fact(int n){
+        // base case
+        if(n==0){
+            return 1;
+        }
+      
+        // recursion
+        int fn = n*fact(n-1);
+        return fn;
+    }
+    public static void main(String args[]){
+        int n=5;
+        System.out.println(fact(n));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 4 : print sum of N natural numbers
+ 
+public class RecursionBasics{
+    public static int calcSum(int n){
+        // base case
+        if(n==1){
+            return 1;
+        }
+
+        // recursion
+        int snm1= calcSum(n-1);
+        int sn=n+ snm1;
+        return sn;
+    }
+    public static void main(String args[]){
+        int n=5;
+        System.out.println(calcSum(n));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 5 : print Nth fibonacci number
+ 
+public class RecursionBasics{
+    public static int fib(int n){
+        // base case
+        if(n==0 || n==1){
+            return n;
+        }
+
+        // recursion
+        int fnm1= fib(n-1);
+        int fnm2= fib(n-2);
+        int fn= fnm1 + fnm2;
+        return fn;
+    }
+    public static void main(String args[]){
+        int n=4;
+        System.out.println(fib(n));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 6 : Check if a given array is sorted
+ 
+public class RecursionBasics{
+    public static boolean isSorted(int arr[],int i){
+        // base case
+       if(i== arr.length-1)
+       return true;
+       if (arr[i]> arr[i+1]){
+        return false;
+       }
+        return isSorted(arr,i+1);
+    }
+    public static void main(String args[]){
+        int arr[]={1,2,5,6};
+        System.out.println(isSorted(arr,0));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 7 : Find the first occurance of an element in an array
+ 
+public class RecursionBasics{
+    public static int firstOccurance(int arr[], int key, int i){
+        // base case
+       if(i== arr.length)
+       return -1;
+       if (arr[i]== key){
+        return i;
+       }
+        return firstOccurance(arr,key,i+1);
+    }
+    public static void main(String args[]){
+        int arr[]={1,2,6,7,9,5,5};
+        System.out.println(firstOccurance(arr,5,0));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 8 : Find the last occurance of an element in an array
+ 
+public class RecursionBasics{
+    public static int lastOccurance(int arr[], int key, int i){
+        // base case
+       if(i== arr.length){
+       return -1;
+       }
+
+        // recursion
+       int isFound= lastOccurance(arr, key, i+1);
+       if ( isFound==-1 && arr[i]== key){
+        return i;
+       }
+        return isFound;
+    }
+    public static void main(String args[]){
+        int arr[]={1,2,6,7,9,5,5,2,5,8};
+        System.out.println(lastOccurance(arr,5,0));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 9 : print x^n 
+ 
+public class RecursionBasics{
+    public static int power(int x, int n){
+        // base case
+       if(n==0){
+       return 1;
+       }
+
+        // recursion
+       int xnm1= power(x,n-1);
+       int xn= x*xnm1;
+        return xn;
+    }
+    public static void main(String args[]){
+        System.out.println(power(2,5));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 10 : print x^n (optimized approach) 
+ 
+public class RecursionBasics{
+    public static int optimizedpower(int x, int n){
+        // base case
+       if(n==0){
+       return 1;
+       }
+
+        // recursion
+       int halfOptimized= optimizedpower(x, n/2);
+       int result= halfOptimized*halfOptimized;
+       
+       // n is odd
+       if(n % 2 != 0){
+        result= x * result;
+       }
+       return result;
+    }
+    public static void main(String args[]){
+        System.out.println(optimizedpower(2,5));
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+problem 11 : Tiling problem 
+             given a "2xn" board and tiles od size "2x1" , count the no. of
+             ways to tile the given board using the 2x1 tiles.
+             (A tile can either be placed horizontaly or vertically)
+ 
+public class RecursionBasics{
+    public static int optimizedpower(int x, int n){
+        // base case
+       if(n==0){
+       return 1;
+       }
+
+        // recursion
+       int halfOptimized= optimizedpower(x, n/2);
+       int result= halfOptimized*halfOptimized;
+       
+       // n is odd
+       if(n % 2 != 0){
+        result= x * result;
+       }
+       return result;
+    }
+    public static void main(String args[]){
+        System.out.println(optimizedpower(2,5));
+    }
+}
