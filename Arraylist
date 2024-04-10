@@ -177,8 +177,9 @@ public class Arraylist {
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-problem : CONTAINER WITH MOST WATER (for given n lines on x-axis, use 2 lines to form a container such that it holds the maximum water)
-Brute force approach ( time complexity = O(n^2))
+QUESTION 4 : CONTAINER WITH MOST WATER (for given n lines on x-axis, use 2 lines to form a container such that it holds the maximum water)
+
+# Brute force approach ( time complexity = O(n^2))
 
 import java.util.ArrayList;
 
@@ -213,7 +214,7 @@ public class Arraylist {
 }
 
 
-2-pointer approach ( time complexity = O(n))
+# 2-pointer approach ( time complexity = O(n))
 
 import java.util.ArrayList;
 
@@ -258,8 +259,9 @@ public class Arraylist {
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-problem : PAIR SUM - 1 (Find if any pair in a Sorted ArrayList has a target sum)
-Brute force approach
+QUESTION 5 : PAIR SUM - 1 (Find if any pair in a Sorted ArrayList has a target sum)
+
+# Brute force approach
 
 import java.util.ArrayList;
 
@@ -291,8 +293,9 @@ public class Arraylist {
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-problem : PAIR SUM - 1 (Find if any pair in a Sorted ArrayList has a target sum)
-2 pointer approach
+QUESTION 6 : PAIR SUM - 1 (Find if any pair in a Sorted ArrayList has a target sum)
+
+# 2 pointer approach
 
 import java.util.ArrayList;
 
@@ -327,7 +330,7 @@ public class Arraylist {
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-problem : PAIR SUM - 2 (Find if any pair in a Sorted & Roated ArrayList has a target sum)
+QUESTION 7 : PAIR SUM - 2 (Find if any pair in a Sorted & Roated ArrayList has a target sum)
 
 import java.util.ArrayList;
 
