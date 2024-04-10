@@ -1,0 +1,374 @@
+------------------------------------------- creating ArrayList-----------------------------------------------
+
+import java.util.ArrayList;
+public class ArrayList {
+    public static void main(String[] args) {
+   //create arraylist
+    ArrayList<Integer> list = new ArrayList<>();
+    ArrayList<String> list2 = new ArrayList<>();
+    ArrayList<Boolean> list3 = new ArrayList<>();
+    }  
+}
+
+------------------------------------------- operations on ArrayList-----------------------------------------------
+
+import java.util.ArrayList;
+
+public class Arraylist {
+    public static void main(String[] args) {
+       //create arraylist
+       ArrayList<Integer> list = new ArrayList<>();
+    
+       // add opration (Tc=O(1))
+       list.add(1);
+       list.add(2);
+       list.add(4);
+       list.add(5);
+       list.add(7);
+       System.out.println(list.size());
+       System.out.println(list);
+
+       // get operation (Tc=O(1))
+        int element = list.get(2);
+        System.out.println("element atbindex 2 is "+ element);
+
+        // remove operation (Tc=O(n))
+        list.remove(2);
+        System.out.println(list);
+
+        //set element at index (Tc=O(n))
+        list.set(2,3);
+        System.out.println(list);
+
+        //contains element (Tc=O(n))
+        System.out.println(list.contains(1));
+        System.out.println(list.contains(11));
+
+        //add at specific index (Tc=O(n))
+        list.add(3,4);
+        System.out.println(list);
+
+        // print arraylist elements
+        for(int i=0; i<list.size();i++){
+            System.out.print(list.get(i) +" ");
+        }
+        System.out.println();
+
+         //print reverse of arraylist
+         for(int i=list.size()-1; i>=0;i--){
+            System.out.print(list.get(i) +" ");
+        }
+    }  
+}
+
+---------------------------------------------------------------------------------------------------------------------
+
+QUESTION 1 : Find maximum in an arraylist
+
+import java.util.ArrayList;
+
+public class Arraylist {
+    public static void main(String[] args) {
+       ArrayList<Integer> list = new ArrayList<>();
+        list.add(2);
+       list.add(5);
+       list.add(9);
+       list.add(3);
+       list.add(6);
+       System.out.println(list);
+
+       int max = Integer.MIN_VALUE;
+       for(int i=0; i<list.size(); i++){
+        // if(max<list.get(i)){
+        //     max= list.get(i);
+        // }
+        max = Math.max(max,list.get(i));
+       }
+       System.out.println("max element = " + max);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------
+
+QUESTION 2 : Swap 2 numbers
+
+import java.util.ArrayList;
+
+public class Arraylist {
+
+    public static void swap(ArrayList<Integer> list, int index1, int index2){
+        int temp = list.get(index1);
+        list.set(index1, list.get(index2));
+        list.set(index2, temp);
+    }
+        public static void main(String[] args) {
+       ArrayList<Integer> list = new ArrayList<>();
+        list.add(2);
+       list.add(5);
+       list.add(9);
+       list.add(3);
+       list.add(6);
+       System.out.println(list);
+
+       int index1 = 1, index2 = 3;
+       swap(list, index1, index2);
+       System.out.println(list);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------
+
+QUESTION 3 : sorting an Arraylist
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Arraylist {
+
+        public static void main(String[] args) {
+       ArrayList<Integer> list = new ArrayList<>();
+        list.add(2);
+       list.add(5);
+       list.add(9);
+       list.add(3);
+       list.add(6);
+       System.out.println(list);
+        Collections.sort(list); // ascending order
+       System.out.println(list);
+
+       // decending order
+       Collections.sort(list, Collections.reverseOrder());
+       System.out.println(list);
+    }
+}
+
+------------------------------------------ MULTI-DIMENSIONAL ARRAYLIST --------------------------------------------------------------
+
+import java.util.ArrayList;
+
+public class Arraylist {
+    public static void main(String[] args) {
+        ArrayList<ArrayList<Integer>> mainlist = new ArrayList<>();
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        ArrayList<Integer> list3 = new ArrayList<>();
+
+        for(int i=1; i<=5; i++){
+            list1.add(1*i);
+            list2.add(i*2);
+            list3.add(i*3);
+        }
+
+        mainlist.add(list1);
+        mainlist.add(list1);
+        mainlist.add(list3);
+        System.out.println(mainlist);
+
+        //print 2-D Arraylist
+        for(int i=0; i<mainlist.size();i++){
+            ArrayList<Integer> currList = mainlist.get(i);
+            for(int j=0; j<currList.size();j++){
+                System.out.print(currList.get(j) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+problem : CONTAINER WITH MOST WATER (for given n lines on x-axis, use 2 lines to form a container such that it holds the maximum water)
+Brute force approach ( time complexity = O(n^2))
+
+import java.util.ArrayList;
+
+public class Arraylist {
+
+    public static int storeWater(ArrayList<Integer> height){
+        int maxWater = 0;
+        for(int i=0; i<height.size();i++){
+            for(int j = i+1; j<height.size();j++){
+                int ht = Math.min(height.get(i),height.get(j));
+                int wt = j-i;
+                int water = ht * wt;
+                maxWater = Math.max(maxWater, water);
+            }
+        }
+        return maxWater;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> height = new ArrayList<>();
+        // 1, 8, 6, 2, 5 ,4, 8, 3, 7
+        height.add(1);
+        height.add(8);
+        height.add(6);
+        height.add(2);
+        height.add(5);
+        height.add(4);
+        height.add(8);
+        height.add(3);
+        height.add(7);
+        System.out.println(storeWater(height));
+    }
+}
+
+
+2-pointer approach ( time complexity = O(n))
+
+import java.util.ArrayList;
+
+public class Arraylist {
+
+    public static int storeWater(ArrayList<Integer> height){
+        int maxWater = 0;
+        int lp=0;
+        int rp=height.size()-1;
+
+        while(lp < rp){
+            int ht = Math.min(height.get(lp),height.get(rp));
+            int wt = rp-lp;
+            int water = ht * wt;
+            maxWater = Math.max(maxWater, water);
+
+            //update ptr
+            if(height.get(lp)< height.get(rp)){
+                lp++;
+            } else {
+                rp--;
+            }
+        }
+        return maxWater;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> height = new ArrayList<>();
+        // 1, 8, 6, 2, 5 ,4, 8, 3, 7
+        height.add(1);
+        height.add(8);
+        height.add(6);
+        height.add(2);
+        height.add(5);
+        height.add(4);
+        height.add(8);
+        height.add(3);
+        height.add(7);
+        System.out.println(storeWater(height));
+
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+problem : PAIR SUM - 1 (Find if any pair in a Sorted ArrayList has a target sum)
+Brute force approach
+
+import java.util.ArrayList;
+
+public class Arraylist {
+
+    public static boolean pairSum1(ArrayList<Integer> list, int target){
+        for(int i=0; i<list.size();i++){
+            for(int j = i+1; j<list.size();j++){
+                if(list.get(i) + list.get(j) == target){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        
+        System.out.println(pairSum1(list, 15));
+
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+problem : PAIR SUM - 1 (Find if any pair in a Sorted ArrayList has a target sum)
+2 pointer approach
+
+import java.util.ArrayList;
+
+public class Arraylist {
+
+    public static boolean pairSum1(ArrayList<Integer> list, int target){
+        int lp = 0;
+        int rp = list.size()-1;
+        while(lp != rp){
+            if(list.get(lp) + list.get(rp) == target){
+                return true;
+            }
+            if(list.get(lp) + list.get(rp) < target){
+                lp++;;
+            } else {
+                rp--;
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6); 
+        System.out.println(pairSum1(list, 5));
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+problem : PAIR SUM - 2 (Find if any pair in a Sorted & Roated ArrayList has a target sum)
+
+import java.util.ArrayList;
+
+public class Arraylist {
+
+    public static boolean pairSum1(ArrayList<Integer> list, int target){
+        int n= list.size();
+        //find pivot
+        int bp = -1;
+        for(int i=0; i<n;i++){
+            if(list.get(i) > list.get(i+1)){
+                bp = i;
+                break;
+            }
+        }
+
+        int lp = bp+1;
+        int rp = bp;
+        while(lp != rp){
+            //case 1
+            if(list.get(lp) + list.get(rp) == target){
+                return true;
+            }
+            //case 2
+            if(list.get(lp) + list.get(rp) < target){
+                lp = (lp+1) % n;
+            } else {
+                //case 3
+                rp = (n+rp-1) % n;
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(11);
+        list.add(15);
+        list.add(6);
+        list.add(8);
+        list.add(9);
+        list.add(10); 
+        System.out.println(pairSum1(list, 20));
+    }
+}
