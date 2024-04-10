@@ -267,28 +267,39 @@ ________________________________________ Printing linked list __________________
     public static void main(String[] args) {
         // creating object for linklist class
         LinkedList ll = new LinkedList();
+
         ll.addFirst(2);
         ll.addFirst(1);
         ll.print();
+
         ll.addLast(3);
         ll.addLast(4);
         ll.print();
+
         ll.add(2, 9);
         ll.print();
+
         ll.removeFirst();
         ll.print();
+
         ll.removeLast();
         ll.print();
+
         System.out.println(ll.size);
+
         System.out.println(ll.iterativeSearch(3));
         System.out.println(ll.iterativeSearch(10));
+
         System.out.println(ll.recursiveSearch(3));
         System.out.println(ll.recursiveSearch(10));
+
         ll.print();
         ll.reverse();
         ll.print();
+
         ll.deleteNthfromEnd(2);
         ll.print();
+
         System.out.println(ll.checkPalindrome());
     }  
 }
