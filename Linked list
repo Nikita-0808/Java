@@ -433,7 +433,7 @@ public class basic {
         // renove
         ll.removeLast();
         ll.removeFirst();
-        System.err.println(ll);
+        System.out.println(ll);
     }
 }
 
