@@ -287,7 +287,7 @@ public class StackBasic {
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# QUESTION 4 : Next Greater Element
+# QUESTION 5 : Next Greater Element
 
 import java.util.*;
 
@@ -328,5 +328,48 @@ public class StackBasic {
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# QUESTION 4 : Valid Parentheses
+# QUESTION 6 : Valid Parentheses
+
+import java.util.*;
+
+public class StackBasic {
+
+    public static boolean isValid( String str){
+        Stack<Character> s = new Stack<>();
+
+        for(int i=0; i < str.length() ;i++){
+            char ch = str.charAt(i);
+
+            //opening
+            if(ch =='(' || ch == '{' || ch == '['){
+                s.push(ch);
+            }else{
+                //closing
+                if(s.isEmpty()){
+                    return false;
+                }
+                if((s.peek() == '(' && ch ==')') || (s.peek() == '{' && ch =='}') || (s.peek() == '[' && ch ==']')){
+                    s.pop();
+                }else{
+                    return false;
+                }
+            }
+        }
+        if(s.isEmpty()){
+            return true;
+        }else{ 
+            return false;
+        }
+    }
+    public static void main(String[] args) {
+        String str ="({[()]})";
+        System.out.println(isValid(str)); 
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# QUESTION 7 : Duplicate parentheses
+
 
