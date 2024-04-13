@@ -476,3 +476,38 @@ public class QueueBasic {
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # QUESTION : Implement Queue using deque
+
+import java.util.*;
+
+public class QueueBasic {
+    static class Queue{
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        //add opertion
+        public void add(int data){
+            deque.addLast(data);
+        }
+
+        //remove operation
+        public int remove(){
+            return deque.removeFirst();
+        }
+
+        // peek operation
+        public int peek(){
+            return deque.getFirst();
+        }
+    }
+
+    public static void main(String[] args) {
+        Queue q = new Queue();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        System.out.println(q);
+        System.out.println("peek = " + q.peek());
+        System.out.println(q.remove());
+        System.out.println(q.remove());
+        System.out.println(q.remove());
+    }
+}
