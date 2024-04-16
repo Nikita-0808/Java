@@ -132,3 +132,6 @@ public class GreedyApproach {
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Problem min absolute Difference pair 
+given two arrays A and B of equal length n. pair each element of array A to an element of array B, such that sum S of absolute differences of all the pair is minimum.
+
