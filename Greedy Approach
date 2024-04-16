@@ -270,3 +270,12 @@ public class GreedyApproach {
         System.out.println();
     } 
 }
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Problem : Chocola problem
+we are given a bar of chocolate composed of mxn square pieces. One should break the chocolate into single square. Each break of a part of chocolate is charged a cost expressed by a positive integer.
+This cost does not depend on the size of the part that is being broken but only depends on the line the break goes along. Let us denote the cost of breaking along consecutive vertical lines with 
+x1,x2,x3,....xm-1 and along horizontal line with y1,y2,y3,.... yn-1. Compute  the minimal cost of breaking the whole chocolate into single square.
+
