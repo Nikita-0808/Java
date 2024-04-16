@@ -4,7 +4,6 @@ Activities are sorted according to end time.
 start[] = {10,12,20}
 end[] = {20.25.30}
 ans = 2(A0,A2)
-____________________X___________________X______________________
 
 public class GreedyApproach {
     public static void main(String[] args) {
