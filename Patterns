@@ -281,6 +281,39 @@ public class patterns {
 
 -----------------------------------------------------------------------------
 
+Pattern 11 : Hollow Rhombus
+        * * * * *
+      *       *
+    *       *
+  *       *
+* * * * *
+
+public class patterns {
+
+    public static void solidRhombus(int n){
+        for(int i=1;i<=n; i++){
+            //space 
+            for(int j=1; j<=(n-i); j++){
+                System.out.print(" "+" ");
+            }
+
+            //boundary rectangle ( hollow rectangle )
+            for(int j =1; j<=n ;j++){
+                if(i==1|| i==n||j==1||j==n){
+                    System.out.print("*" + " ");
+                }else{
+                    System.out.print(" " + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        solidRhombus(5);
+    }
+}
+
 
 
 
