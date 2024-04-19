@@ -402,3 +402,118 @@ public class HashingBasic {
         }
     }
 }
+
+
+----------------------------------------------------------------------------- Linked Hashset ---------------------------------------------------------------------------------------------
+
+
+import java.util.*;
+public class HashingBasic {
+    public static void main(String[] args) {
+        HashSet<String> cities = new HashSet<>();
+        cities.add("delhi");
+        cities.add("mumbai");
+        cities.add("Noida");
+        cities.add("bengaluru");
+        System.out.println(cities);
+
+        LinkedHashSet<String> lhs = new LinkedHashSet<>();
+        lhs.add("delhi");
+        lhs.add("mumbai");
+        lhs.add("Noida");
+        lhs.add("bengaluru");
+        System.out.println(lhs);
+    }
+}
+
+
+----------------------------------------------------------------------------- Treeset ---------------------------------------------------------------------------------------------
+
+import java.util.*;
+public class HashingBasic {
+    public static void main(String[] args) {
+        HashSet<String> cities = new HashSet<>();
+        cities.add("delhi");
+        cities.add("mumbai");
+        cities.add("Noida");
+        cities.add("bengaluru");
+        System.out.println(cities);
+
+        LinkedHashSet<String> lhs = new LinkedHashSet<>();
+        lhs.add("delhi");
+        lhs.add("mumbai");
+        lhs.add("Noida");
+        lhs.add("bengaluru");
+        System.out.println(lhs);
+
+        TreeSet<String> ts = new TreeSet<>();
+        ts.add("Delhi");
+        ts.add("Mumbai");
+        ts.add("Noida");
+        ts.add("Bengaluru");
+        System.out.println(ts);   
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Problem : Count distinct element
+
+import java.util.*;
+public class HashingBasic {
+
+    public static void main(String[] args) {
+        int num[] ={4,3,2,5,6,7,3,4,2,1};
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0; i<num.length;i++){
+            set.add(num[i]);
+        }
+        System.out.println("ans = " + set.size());
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Problem : union and Intersection of two array
+
+import java.util.*;
+public class HashingBasic {
+
+    public static void union(int arr1[], int arr2[]){
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0; i<arr1.length;i++){
+            set.add(arr1[i]);
+        }
+        for(int i=0; i<arr2.length;i++){
+            set.add(arr2[i]);
+        }
+        System.out.println("union = " + set.size());
+    }
+
+    public static void intersection(int arr1[], int arr2[]){
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0; i<arr1.length;i++){
+            set.add(arr1[i]);
+        }
+        int count = 0;
+        for(int i=0; i<arr2.length;i++){
+            if(set.contains(arr2[i])){
+                count++;
+                set.remove(arr2[i]);
+            }
+        }
+        System.out.println("Intersection = " + count);
+    }
+
+    public static void main(String[] args) {
+        int arr1[] ={7,3,9};
+        int arr2[]={6,3,9,2,9,4};
+        union(arr1, arr2);
+        intersection(arr1, arr2);
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
