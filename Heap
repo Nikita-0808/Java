@@ -203,3 +203,78 @@ public class HeapBasic {
        System.out.println();
     }
 }
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Problem : Nearby cars 
+we are given N points in a 2D plane which are locations of N cars, If we are at the origin, Print the nearest l cars
+
+import java.util.*;
+
+public class HeapBasic {
+
+    static class  Point implements Comparable<Point>{
+        int x, y , distsq, idx;
+        public Point(int x, int y,int distsq, int idx){
+            this.x =x;
+            this.y= y;
+            this.distsq =distsq;
+            this.idx = idx;
+        }
+        @Override
+        public int compareTo(Point p2){
+            return this.distsq - p2.distsq;  // ascending order
+        } 
+    }
+    
+    public static void main(String[] args) {
+       int pts[][]={{3,3},{5,-1},{-2,4}};
+       int k =2;
+
+       PriorityQueue<Point> pq = new PriorityQueue<>();
+       for(int i=0;i<pts.length;i++){
+        int distsq = pts[i][0]*pts[i][0] + pts[i][1]*pts[i][1];
+        pq.add(new Point(pts[i][0],pts[i][1],distsq , i));
+       }
+
+       // nearest k car
+       for(int i=0; i<k; i++){
+        System.out.println("c"+ pq.remove().idx);
+       }
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Problem : Connect N ropes
+Given are N ropes of different lengths, the task is to connect these ropes into one rope with minimum cost, such that the cost of connecting two rope is equal to the sum of their lengths.
+
+import java.util.*;
+
+public class HeapBasic {
+
+    public static void main(String[] args) {
+        int ropes[]={2,3,3,4,6};
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for(int i=0; i<ropes.length;i++){
+            pq.add(ropes[i]);
+        }
+
+         int cost =0;
+         while(pq.size()> 1){
+            int min = pq.remove();
+            int min2 = pq.remove();
+            cost += min + min2;
+            pq.add(min + min2);
+         }
+
+         System.out.println(" cost of connecting n ropes = " + cost);
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Problem
