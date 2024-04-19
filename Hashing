@@ -39,9 +39,10 @@ public class HashingBasic {
 }
 
 
---------------------------------------------------------------------------- Implementation of HashMap --------------------------------------------------------------------------------
-eration on hashmap
- import java.util.*;
+--------------------------------------------------------------------------- Creation of HashMap --------------------------------------------------------------------------------
+
+import java.util.*;
+
   public class HashingBasic {
   
     public static void main(String[] args) {
@@ -62,6 +63,8 @@ eration on hashmap
     }
   }
 
+
+--------------------------------------------------------------------------- Implementation of HashMap --------------------------------------------------------------------------------
 
 import java.util.*;
 import java.util.LinkedList;
@@ -212,7 +215,8 @@ public class HashingBasic {
         System.out.println(hm.get("india"));
         hm.remove("india");
         System.out.println(hm.get("india"));
-
     }
 }
 
+
+--------------------------------------------------------------------------- Linked HashMap --------------------------------------------------------------------------------
