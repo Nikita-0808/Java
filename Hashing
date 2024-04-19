@@ -243,3 +243,23 @@ public class HashingBasic {
 
 
 --------------------------------------------------------------------------- TreeMap --------------------------------------------------------------------------------
+
+import java.util.*;
+
+public class HashingBasic {
+
+    public static void main(String[] args) {
+        TreeMap<String,Integer> tm = new TreeMap<>();
+        tm.put("india",100);
+        tm.put("china",150);
+        tm.put("US",50);
+
+        HashMap<String,Integer> hm = new HashMap<>();
+        hm.put("india",100);
+        hm.put("china",150);
+        hm.put("US",50);
+
+        System.out.println(hm);
+        System.out.println(tm);
+    }
+}
