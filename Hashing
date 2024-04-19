@@ -337,3 +337,68 @@ public class HashingBasic {
         System.out.println(isAnagram(s, t)); 
     }
 }
+
+
+----------------------------------------------------------------------------- Hash set ---------------------------------------------------------------------------------------------
+
+import java.util.*;
+public class HashingBasic {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(5);
+        set.add(2);
+
+        System.out.println(set);
+        System.out.println(set.size());
+
+        if(set.contains(2)){
+            System.out.println("set contains 2");
+        }
+        set.remove(5);
+        if(set.contains(5)){
+            System.out.println("set contains 5");
+        }
+        set.clear();
+        System.out.println(set.size());
+        System.out.println(set.isEmpty()); 
+    }
+}
+
+
+----------------------------------------------------------------------------- Iteration on Hashset ( using iterator) ---------------------------------------------------------------------------------------------
+
+import java.util.*;
+public class HashingBasic {
+    public static void main(String[] args) {
+        HashSet<String> cities = new HashSet<>();
+        cities.add("delhi");
+        cities.add("mumbai");
+        cities.add("Noida");
+        cities.add("bengaluru");
+
+        Iterator it = cities.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------- Iteration on Hashset ( using Enhanced for loop) ---------------------------------------------------------------------------------------------
+
+import java.util.*;
+public class HashingBasic {
+    public static void main(String[] args) {
+        HashSet<String> cities = new HashSet<>();
+        cities.add("delhi");
+        cities.add("mumbai");
+        cities.add("Noida");
+        cities.add("bengaluru");
+
+        for(String city :cities){
+            System.out.println(city);
+        }
+    }
+}
