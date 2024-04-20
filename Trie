@@ -247,4 +247,7 @@ public class TrieBasic {
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Problem : Start with problem 
+# Problem : count unique substring
+Given a String if length n of lowercase alphabets character, we need to count total numbers od distinct substring of this string.
+
+
